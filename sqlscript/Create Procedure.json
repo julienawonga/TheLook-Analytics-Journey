@@ -1,0 +1,17 @@
+{
+	"name": "Create Procedure",
+	"properties": {
+		"content": {
+			"query": " USE Sales;\n GO;\n CREATE PROCEDURE sp_GetYearlySales\n AS\n BEGIN\n     -- drop existing table\n     IF EXISTS (\n             SELECT * FROM sys.external_tables\n             WHERE name = 'YearlySalesTotals'\n         )\n         DROP EXTERNAL TABLE YearlySalesTotals\n     -- create external table\n     CREATE EXTERNAL TABLE YearlySalesTotals\n     WITH (\n             LOCATION = 'sales/yearlysales/',\n             DATA_SOURCE = sales_data,\n             FILE_FORMAT = ParquetFormat\n         )\n     AS\n     SELECT YEAR(OrderDate) AS CalendarYear,\n             SUM(Quantity) AS ItemsSold,\n             ROUND(SUM(UnitPrice) - SUM(TaxAmount), 2) AS NetRevenue\n     FROM\n         OPENROWSET(\n             BULK 'sales/csv/*.csv',\n             DATA_SOURCE = 'sales_data',\n             FORMAT = 'CSV',\n             PARSER_VERSION = '2.0',\n             HEADER_ROW = TRUE\n         ) AS orders\n     GROUP BY YEAR(OrderDate)\n END\n\n  EXEC sp_GetYearlySales;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "Sales",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
