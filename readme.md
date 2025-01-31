@@ -1,8 +1,7 @@
 - Setup project (files and directories)
 - init npm and install packages
     - npm init -y
-    - npm install express mongoose cors
-    - npm install --save-dev nodemon
+    - npm install express mongoose cors nodemon
 
 - create models
     - import mongoose
