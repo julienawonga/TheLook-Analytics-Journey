@@ -47,3 +47,45 @@ ORDER BY counts DESC
 ---
 
 > [x] Distribution des genres vs. catégories de produits achetés
+```sql
+SELECT
+    p.category,
+    o.gender,
+    COUNT(*) AS total_achats,
+    ROUND(100 * COUNT(*) / SUM(COUNT(*)) OVER(PARTITION BY p.category),2) AS pourcentage
+FROM `bigquery-public-data.thelook_ecommerce.orders` o
+JOIN `bigquery-public-data.thelook_ecommerce.order_items` oi
+    ON o.order_id = oi.order_id
+JOIN `bigquery-public-data.thelook_ecommerce.products` p
+    ON oi.product_id = p.id
+GROUP BY 
+    o.gender,
+    p.category
+ORDER BY 
+    p.category
+```
+    
+---
+
+> [x] Clients ayant fait plus de 3 achats
+```sql
+WITH clients_fideles AS (
+  SELECT
+    user_id,
+    COUNT(DISTINCT order_id) AS nb_achats
+  FROM `bigquery-public-data.thelook_ecommerce.orders`
+  GROUP BY user_id
+  HAVING nb_achats > 3
+)
+SELECT
+  cf.user_id,
+  u.first_name,
+  u.last_name,
+  u.gender,
+  cf.nb_achats
+FROM clients_fideles cf
+JOIN `bigquery-public-data.thelook_ecommerce.users` u
+  ON cf.user_id = u.id
+ORDER BY cf.nb_achats DESC;
+```
+

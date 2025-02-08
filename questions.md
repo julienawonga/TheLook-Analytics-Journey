@@ -6,8 +6,8 @@
 **Concepts SQL :** `GROUP BY`, `CASE`, `COUNT()`, `AVG()`, `JOINS`
 
 - [X] Répartition des clients par tranche d'âge 
-- [ ] Distribution des genres vs. catégories de produits achetés 
-- [ ] Clients ayant fait plus de 3 achats 
+- [X] Distribution des genres vs. catégories de produits achetés 
+- [X] Clients ayant fait plus de 3 achats 
 - [ ] Densité des commandes par ville 
 - [ ] Panier moyen par ville 
 - [ ] Taux de conversion par source de trafic 
