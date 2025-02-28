@@ -15,3 +15,28 @@ GROUP BY
 ORDER BY 
   stock_actuel DESC;
 ```
+
+---
+> [X] Produits en rupture
+```sql
+WITH stock_qte AS(
+  SELECT
+    product_id,
+    count(*) AS qte_non_vendu
+  FROM
+    `bigquery-public-data.thelook_ecommerce.inventory_items`
+  WHERE
+      sold_at IS NULL
+  GROUP BY product_id
+)
+SELECT
+  p.name
+FROM
+  `bigquery-public-data.thelook_ecommerce.products` AS p
+LEFT JOIN stock_qte AS sq
+ON
+  p.id = sq.product_id
+WHERE 
+  sq.product_id IS NULL
+
+```

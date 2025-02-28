@@ -31,7 +31,7 @@
 **Concepts SQL :** `JOIN`, `SUM()`, `AVG()`, `GEOGRAPHY FUNCTIONS`, `CASE`
 
 - [X] Stock par centre de distribution 
-- [ ] Produits en rupture 
+- [X] Produits en rupture 
 - [ ] Coût total du stock par catégorie 
 - [ ] Approvisionnement optimal par région 
 - [ ] Clients dans un rayon de 50km d'un centre 
