@@ -1,7 +1,7 @@
 ```sql
     SELECT 
-        min(age),
-        max(age)
+        min(age) AS min_age,
+        max(age) AS max_age
     FROM `bigquery-public-data.thelook_ecommerce.users`
 ```
 
