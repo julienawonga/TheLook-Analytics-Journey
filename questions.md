@@ -30,7 +30,7 @@
 **Tables :** `inventory_items`, `distribution_centers`, `products`
 **Concepts SQL :** `JOIN`, `SUM()`, `AVG()`, `GEOGRAPHY FUNCTIONS`, `CASE`
 
-- [ ] Stock par centre de distribution 
+- [X] Stock par centre de distribution 
 - [ ] Produits en rupture 
 - [ ] Coût total du stock par catégorie 
 - [ ] Approvisionnement optimal par région 
