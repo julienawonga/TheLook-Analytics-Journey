@@ -1,7 +1,3 @@
-
-Avant tout, j'ai verfier l'age minim et l'age maximun de mes utilisateur,
-avec 
-
 ```sql
     SELECT 
         min(age),
@@ -11,8 +7,6 @@ avec
 
 
 > [x] Répartition des clients par tranche d'âge
-J'ai fait le classement en 4 catégories :
-
     1. Adolescents:
         12-17 ans
 
@@ -89,3 +83,21 @@ JOIN `bigquery-public-data.thelook_ecommerce.users` u
 ORDER BY cf.nb_achats DESC;
 ```
 
+---
+> [X]  Panier moyen par ville
+
+```sql
+SELECT
+  u.city,
+  ROUND(SUM(oi.sale_price) / COUNT(DISTINCT o.order_id), 2) AS panier_moyen
+FROM
+  `bigquery-public-data.thelook_ecommerce.orders` AS o
+JOIN `bigquery-public-data.thelook_ecommerce.order_items` AS oi
+  ON o.order_id = oi.order_id
+JOIN `bigquery-public-data.thelook_ecommerce.users` AS u
+  ON o.user_id = u.id
+GROUP BY
+  u.city
+ORDER BY
+  panier_moyen DESC;
+```

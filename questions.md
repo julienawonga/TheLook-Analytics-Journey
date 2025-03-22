@@ -9,7 +9,7 @@
 - [X] Distribution des genres vs. catégories de produits achetés 
 - [X] Clients ayant fait plus de 3 achats 
 - [ ] Densité des commandes par ville 
-- [ ] Panier moyen par ville 
+- [X] Panier moyen par ville 
 - [ ] Taux de conversion par source de trafic 
 
 ### **Jour 2 – Analyse des Commandes et Ventes**
