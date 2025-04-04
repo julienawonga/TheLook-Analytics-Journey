@@ -17,7 +17,7 @@
 **Tables :** `orders`, `order_items`, `products`
 **Concepts SQL :** `JOIN`, `WINDOW FUNCTIONS (RANK, DENSE_RANK)`, `DATE_TRUNC`, `COUNT()`, `SUM()`
 
-- [x] Évolution MoM du CA 
+- [ ] Évolution MoM du CA 
 - [ ] Top 10 des produits les plus vendus 
 - [ ] Taux de conversion par source de trafic 
 - [ ] Distance moyenne entre clients et centres de distribution 

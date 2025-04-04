@@ -110,3 +110,5 @@ Ce fichier décrit le schéma complet du dataset *TheLook Ecommerce* utilisé da
 | traffic_source   | STRING NULLABLE  | Source de trafic de l'utilisateur            |
 | created_at       | TIMESTAMP NULLABLE | Date de création du compte utilisateur     |
 | user_geom        | GEOGRAPHY NULLABLE | Géométrie géographique de l'utilisateur    |
+
+
