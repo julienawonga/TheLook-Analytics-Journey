@@ -5,12 +5,12 @@
 **Tables :** `users`, `orders`
 **Concepts SQL :** `GROUP BY`, `CASE`, `COUNT()`, `AVG()`, `JOINS`
 
-- Répartition des clients par tranche d'âge 
-- Distribution des genres vs. catégories de produits achetés 
-- Clients ayant fait plus de 3 achats 
-- Densité des commandes par ville 
-- Panier moyen par ville 
-- Taux de conversion par source de trafic 
+- [ ] Répartition des clients par tranche d'âge 
+- [ ] Distribution des genres vs. catégories de produits achetés 
+- [ ] Clients ayant fait plus de 3 achats 
+- [ ] Densité des commandes par ville 
+- [ ] Panier moyen par ville 
+- [ ] Taux de conversion par source de trafic 
 
 ### **Jour 2 – Analyse des Commandes et Ventes**
 
